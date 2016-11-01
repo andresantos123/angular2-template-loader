@@ -27,7 +27,7 @@ function getTemplateUrlFromFile(pathFile, url) {
   if (!Object.keys(templateMap).length){
     mapTemplateUrl(pathFile, url)
   }
-  var key = url.replace(/\s?template_url_\d\.(.*),$/g, '$1')
+  var key = url.replace(/,\s*$/, '').split('.')[1];
   return templateMap[key];
 }
 
